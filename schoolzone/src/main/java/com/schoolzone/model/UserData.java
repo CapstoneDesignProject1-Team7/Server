@@ -7,7 +7,7 @@ public class UserData {
 	private double latitude;
 	private double longitude;
 	
-	public UserData(String id, boolean type, double latitude, double longitude) {
+	public UserData(String id, double latitude, double longitude, boolean type) {
 		super();
 		this.id = id;
 		this.type = type;
