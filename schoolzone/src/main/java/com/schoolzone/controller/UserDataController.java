@@ -1,8 +1,5 @@
 package com.schoolzone.controller;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import javax.annotation.PostConstruct;
 
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -21,7 +18,6 @@ public class UserDataController {
 	
 	private UserDataMapper mapper;
 	
-	private Map<String, UserData> userMap;
 	
 	public UserDataController(UserDataMapper mapper) {
 		this.mapper = mapper;
@@ -29,8 +25,6 @@ public class UserDataController {
 	
 	@PostConstruct
 	public void init() {
-		userMap = new HashMap<String, UserData>();
-		userMap.put("1", new UserData("1", 35.889, 128.6106, true));
 	}
 	
 	@GetMapping("/user/{id}")
@@ -39,12 +33,12 @@ public class UserDataController {
 	}
 	
 	@PutMapping("/user/{id}")
-	public void putUserData(@PathVariable("id") String id, @RequestParam double latitude, @RequestParam double longitude, @RequestParam boolean type) {
+	public void putUserData(@PathVariable("id") String id, @RequestParam double latitude, @RequestParam double longitude, @RequestParam int type) {
 		mapper.insertUserData(id, latitude, longitude, type);
 	}
 	
 	@PostMapping("/user/{id}")
-	public void postUserData(@PathVariable("id") String id, @RequestParam double latitude, @RequestParam double longitude, @RequestParam boolean type) {
+	public void postUserData(@PathVariable("id") String id, @RequestParam double latitude, @RequestParam double longitude, @RequestParam int type) {
 		mapper.updateUserData(id, latitude, longitude, type);
 	}
 	

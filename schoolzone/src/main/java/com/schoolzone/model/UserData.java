@@ -3,11 +3,11 @@ package com.schoolzone.model;
 
 public class UserData {
 	private String id;
-	private boolean type;
+	private int type;
 	private double latitude;
 	private double longitude;
 	
-	public UserData(String id, double latitude, double longitude, boolean type) {
+	public UserData(String id, double latitude, double longitude, int type) {
 		super();
 		this.id = id;
 		this.type = type;
@@ -21,14 +21,6 @@ public class UserData {
 
 	public void setId(String id) {
 		this.id = id;
-	}
-
-	public boolean isType() {
-		return type;
-	}
-
-	public void setType(boolean type) {
-		this.type = type;
 	}
 
 	public double getLatitude() {
@@ -47,5 +39,11 @@ public class UserData {
 		this.longitude = longitude;
 	}
 	
-	
+	public int getType() {
+		return type;
+	}
+
+	public void setType(int type) {
+		this.type = type;
+	}
 }
