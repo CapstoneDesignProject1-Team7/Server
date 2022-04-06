@@ -4,8 +4,11 @@ LABEL maintainer="cube9928@knu.ac.kr"
 
 VOLUME /tmp
 ARG JAR_FILE=build/libs/schoolzone-0.0.1-SNAPSHOT.jar
-ADD ${JAR_FILE} to-do-schoolzone.jar
+ADD ${JAR_FILE} schoolzone.jar
+
+# for docker hub
+COPY ${JAR_FILE} cube9928/schoolzone.jar
 
 EXPOSE 8080
 
-ENTRYPOINT ["java","-jar","/to-do-schoolzone.jar"]
+ENTRYPOINT ["java","-jar","/schoolzone.jar"]
