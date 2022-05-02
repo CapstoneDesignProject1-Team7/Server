@@ -14,7 +14,7 @@ import com.schoolzone.model.LocationData;
 @Mapper
 public interface UserDataMapper {
 	
-	@Select("SELECT latitude, longitude, (6371 * acos (cos ( radians(latitude) )* cos( radians(#{latitude}) )* cos( radians(longitude) - radians(#{longitude}) )+ sin ( radians(latitude) )* sin( RADIANS(#{latitude}) ))) AS distance FROM userData HAVING distance < 0.05 ORDER BY distance;")
+	@Select("SELECT latitude, longitude, (6371 * acos (cos ( radians(latitude) )* cos( radians(#{latitude}) )* cos( radians(longitude) - radians(#{longitude}) )+ sin ( radians(latitude) )* sin( RADIANS(#{latitude}) ))) AS distance FROM userData WHERE type=#{type} HAVING distance < 0.05 ORDER BY distance;")
 	ArrayList<LocationData> getUserData(@Param("latitude") double latitude, @Param("longitude") double longitude, @Param("type") int type);
 	
 	@Insert("INSERT INTO UserData VALUES(#{id}, #{latitude}, #{longitude}, #{type})")
