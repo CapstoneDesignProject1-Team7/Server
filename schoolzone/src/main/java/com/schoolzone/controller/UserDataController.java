@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.schoolzone.mapper.UserDataMapper;
-import com.schoolzone.model.LocationData;
+import com.schoolzone.model.LocationDTO;
 
 @RestController
 public class UserDataController {
@@ -28,7 +28,7 @@ public class UserDataController {
 	}
 	
 	@GetMapping("/user")
-	public ArrayList<LocationData> getUserData(@RequestParam double latitude, @RequestParam double longitude, @RequestParam int type) {
+	public ArrayList<LocationDTO> getUserData(@RequestParam double latitude, @RequestParam double longitude, @RequestParam int type) {
 		System.out.println("REQUESTED GET DATA " + latitude + " " + longitude);
 		return mapper.getUserData(latitude, longitude, 1-type);
 	}

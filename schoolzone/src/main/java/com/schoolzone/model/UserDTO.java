@@ -1,14 +1,14 @@
 package com.schoolzone.model;
 
 
-public class UserData {
+public class UserDTO {
 	private String id;
 	// driver : 1 , kid : 0
 	private int type;
 	private double latitude;
 	private double longitude;
 	
-	public UserData(String id, double latitude, double longitude, int type) {
+	public UserDTO(String id, double latitude, double longitude, int type) {
 		super();
 		this.id = id;
 		this.type = type;
