@@ -3,6 +3,7 @@ package com.schoolzone.model;
 
 public class UserData {
 	private String id;
+	// driver : 1 , kid : 0
 	private int type;
 	private double latitude;
 	private double longitude;
