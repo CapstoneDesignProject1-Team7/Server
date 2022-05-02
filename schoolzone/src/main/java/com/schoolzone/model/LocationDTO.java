@@ -1,6 +1,6 @@
 package com.schoolzone.model;
 
-public class LocationData {
+public class LocationDTO {
 	private double latitude;
 	private double longitude;
 	
